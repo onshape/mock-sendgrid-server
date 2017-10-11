@@ -1,0 +1,38 @@
+{
+  "name": "mock-sendgrid-server",
+  "version": "0.0.1",
+  "description": "Mock Sendgrid SMTP and API Server",
+  "main": "index.js",
+  "scripts": {
+    "build": "docker build -t mock-sendgrid .",
+    "docker": "docker run -d --rm --name mock-sendgrid -p 5870:5870 -p 5871:5871 mock-sendgrid",
+    "fix": "./node_modules/.bin/eslint --fix **/*.js || exit 0",
+    "lint": "./node_modules/.bin/eslint **/*.js || exit 0",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mdbarr/mock-sendgrid-server.git"
+  },
+  "keywords": [
+    "mock",
+    "sendgrid",
+    "smtp",
+    "api"
+  ],
+  "author": "Mark Barr",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mdbarr/mock-sendgrid-server/issues"
+  },
+  "homepage": "https://github.com/mdbarr/mock-sendgrid-server#readme",
+  "dependencies": {
+    "mailparser": "^2.1.0",
+    "request": "^2.83.0",
+    "restify": "^6.0.1",
+    "smtp-server": "^3.3.0"
+  },
+  "devDependencies": {
+    "eslint": "^4.8.0"
+  }
+}

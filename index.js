@@ -7,7 +7,7 @@ const args = process.argv.slice(2);
 const options = require('minimist')(args);
 
 const config = {};
-const configFile = options.config || options.c || './config.json';
+const configFile = options.config || options.c || '/etc/mock-sendgrid-config.json';
 try {
   if (fs.existsSync(configFile)) {
     console.log(`Loading configuration from ${ configFile }...`);

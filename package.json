@@ -1,6 +1,6 @@
 {
   "name": "mock-sendgrid-server",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Mock Sendgrid SMTP and API Server",
   "main": "index.js",
   "scripts": {
@@ -8,6 +8,7 @@
     "docker": "docker run -d --rm --name mock-sendgrid -p 5870:5870 -p 5871:5871 mock-sendgrid",
     "fix": "./node_modules/.bin/eslint --fix **/*.js || exit 0",
     "lint": "./node_modules/.bin/eslint **/*.js || exit 0",
+    "start": "forever ./index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

@@ -1,6 +1,6 @@
 {
   "name": "mock-sendgrid-server",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Mock Sendgrid SMTP and API Server",
   "main": "index.js",
   "scripts": {

@@ -1,6 +1,6 @@
 {
   "name": "mock-sendgrid-server",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Mock Sendgrid SMTP and API Server",
   "main": "index.js",
   "scripts": {
@@ -29,6 +29,7 @@
   },
   "homepage": "https://github.com/mdbarr/mock-sendgrid-server#readme",
   "dependencies": {
+    "async": "^2.6.0",
     "mailparser": "^2.1.0",
     "request": "^2.83.0",
     "restify": "^6.0.1",

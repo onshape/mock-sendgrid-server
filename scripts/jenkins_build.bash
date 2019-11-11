@@ -7,4 +7,4 @@ yarn clean
 yarn build
 
 # promote
-[[ "$1" == "1" ]] && yarn push
+[[ "$1" == "1" ]] && yarn push || true

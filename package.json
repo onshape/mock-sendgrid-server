@@ -1,16 +1,16 @@
 {
   "name": "mock-sendgrid-server",
-  "dockername": "docker-registry.dev.onshape.com:5000/mock-sendgrid",
+  "dockername": "mock-sendgrid",
   "version": "0.2.0",
   "description": "Mock Sendgrid SMTP and API Server",
   "main": "index.js",
   "scripts": {
-    "build": "docker build -t $npm_package_dockername .",
-    "clean": "docker rmi $npm_package_dockername || exit 0",
-    "docker": "docker run -d --rm --name mock-sendgrid -p 5870:5870 -p 5871:5871 mock-sendgrid",
+    "build": "docker build -t $(getDockerRegistryUrl)/$npm_package_dockername .",
+    "clean": "docker rmi $(getDockerRegistryUrl)/$npm_package_dockername || exit 0",
+    "docker": "docker run -d --rm --name $npm_package_dockername -p 5870:5870 -p 5871:5871 $(getDockerRegistryUrl)/$npm_package_dockername",
     "fix": "./node_modules/.bin/eslint --fix **/*.js || exit 0",
     "lint": "./node_modules/.bin/eslint **/*.js || exit 0",
-    "push": "docker push $npm_package_dockername",
+    "push": "dockerLogin; docker push $(getDockerRegistryUrl)/$npm_package_dockername",
     "start": "forever ./index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
